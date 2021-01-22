@@ -1,0 +1,20 @@
+"Bar Description"
+-
+barID int PK FK - Location.barID
+barName varchar
+barType varchar
+website varchar
+hoursOfOperation varchar
+phoneNumber int
+avgPrice varchar
+Ratings double
+
+"Location"
+-
+barID int FK
+coordinates varchar
+county varchar
+streetAddress varchar
+town varchar
+state varchar
+zipcode varchar
