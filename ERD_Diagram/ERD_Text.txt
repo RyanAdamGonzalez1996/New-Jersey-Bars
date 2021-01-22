@@ -1,20 +1,20 @@
-"Bar Description"
+"bar_description"
 -
-barID int PK FK - Location.barID
-barName varchar
-barType varchar
+bar_id serial PK FK - bar_location.bar_id
+bar_name varchar
+bar_type varchar
 website varchar
-hoursOfOperation varchar
-phoneNumber int
-avgPrice varchar
-Ratings decimal
+hours_of_operation varchar
+phone_number int
+avg_price varchar
+ratings decimal
 
-"Location"
+"bar_location"
 -
-barID int FK
+bar_id int FK
 coordinates varchar
 county varchar
-streetAddress varchar
+street_address varchar
 town varchar
 state varchar
 zipcode varchar

@@ -1,32 +1,26 @@
--- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- Link to schema: https://app.quickdatabasediagrams.com/#/d/YjFbXz
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
+DROP TABLE bar_description, bar_location
 
-
-CREATE TABLE "Bar Description" (
-    "barID" int   NOT NULL,
-    "barName" varchar   NOT NULL,
-    "barType" varchar   NOT NULL,
-    "website" varchar   NOT NULL,
-    "hoursOfOperation" varchar   NOT NULL,
-    "phoneNumber" int   NOT NULL,
-    "avgPrice" varchar   NOT NULL,
-    "Ratings" decimal   NOT NULL,
-    CONSTRAINT "pk_Bar Description" PRIMARY KEY (
-        "barID"
-     )
+CREATE TABLE bar_description (
+    bar_id serial   NOT NULL,
+    bar_name varchar   NOT NULL,
+    bar_type varchar   NOT NULL,
+    website varchar   NOT NULL,
+    hours_of_operation varchar   NOT NULL,
+    phone_number int   NOT NULL,
+    avg_price varchar   NOT NULL,
+    ratings decimal   NOT NULL,
+    PRIMARY KEY (bar_id)
 );
 
-CREATE TABLE "Location" (
-    "barID" int   NOT NULL,
-    "coordinates" varchar   NOT NULL,
-    "county" varchar   NOT NULL,
-    "streetAddress" varchar   NOT NULL,
-    "town" varchar   NOT NULL,
-    "state" varchar   NOT NULL,
-    "zipcode" varchar   NOT NULL
+CREATE TABLE bar_location (
+   	bar_id int   NOT NULL,
+    coordinates varchar   NOT NULL,
+    county varchar   NOT NULL,
+    streetAddress varchar   NOT NULL,
+    town varchar   NOT NULL,
+    state varchar   NOT NULL,
+    zipcode varchar   NOT NULL,
+	FOREIGN KEY (bar_id)
+	REFERENCES bar_description (bar_id)
 );
-
-ALTER TABLE "Bar Description" ADD CONSTRAINT "fk_Bar Description_barID" FOREIGN KEY("barID")
-REFERENCES "Location" ("barID");
 
