@@ -7,7 +7,7 @@ website varchar
 hoursOfOperation varchar
 phoneNumber int
 avgPrice varchar
-Ratings double
+Ratings decimal
 
 "Location"
 -

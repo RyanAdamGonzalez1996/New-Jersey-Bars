@@ -11,7 +11,7 @@ CREATE TABLE "Bar Description" (
     "hoursOfOperation" varchar   NOT NULL,
     "phoneNumber" int   NOT NULL,
     "avgPrice" varchar   NOT NULL,
-    "Ratings" double   NOT NULL,
+    "Ratings" decimal   NOT NULL,
     CONSTRAINT "pk_Bar Description" PRIMARY KEY (
         "barID"
      )
