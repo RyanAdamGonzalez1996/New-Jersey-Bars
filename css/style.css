@@ -54,7 +54,7 @@ html {
   
 .container {
     padding: 0 16px;
-    
+    background-color:  rgb(203, 224, 233);
 }
   
 .container::after, .row::after {
