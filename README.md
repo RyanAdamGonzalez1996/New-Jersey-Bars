@@ -20,11 +20,12 @@ TripAdvisor - https://www.tripadvisor.com/
 
 # Method
   ## How we created the application
-  - First, we created the basis for our application using HTML and CSS
-  - Then, we scraped the data from TripAdvisor and uploaded it to a postgresSQL database
-  - Then, we exported the database tables to two CSV files for future use
-  - Next, we used a Flask application to read in the CSV files and convert them into a JSON object in our "/dataset" route
-  - Lastly, we used the JSON object in the "/dataset" route, to create the Leaflet application to finalize the interactive map.
+  - Created the basis for our application using HTML and CSS
+  - Scraped the data from TripAdvisor and uploaded it to a postgresSQL database
+  - Exported the database tables to two CSV files for future use
+  - Used a Flask application to read in the CSV files and convert them into a JSON object in our "/dataset" route
+  - Load the Top Ten Bars Data Visualization
+  - Used the JSON object in the "/dataset" route, to create the Leaflet application to finalize the interactive map.
   
 # Screenshots of code in action
 
