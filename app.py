@@ -9,8 +9,8 @@ import json, csv
 app = Flask(__name__)
 
 # Read in the CSV files from our database tables
-descriptionFilePath = "insert file path here"
-locationFilePath = "isert file path here"
+descriptionFilePath = "/../csv/mini_oprah"
+locationFilePath = "/../csv/new_york_times"
 
 # Declare dictionaries to store tables
 descriptionData = {}
@@ -20,10 +20,14 @@ locationData = {}
 with open(descriptionFilePath) as descCSV:
     csvReader = csv.DictReader(open(descCSV))
     for csvRow in csvReader:
+        isbn = csvRow["isbn"]
+        descriptionData[isbn] = csvRow
 
 with open(locationFilePath) as locationCSV:
     csvReader = csv.DictReader(open(locationCSV))  
     for csvRow in csvReader:
+        isbn = csvRow["isbn"]
+        locationData[isbn] = csvRow
               
 # Create a complete data list that contains the two dictionaries
 data = [descriptionData, locationData]
