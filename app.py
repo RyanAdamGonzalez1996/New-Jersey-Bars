@@ -3,16 +3,31 @@ from flask import Flask, render_template, jsonify, redirect
 import numpy as np
 import datetime as dt
 
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+import json, csv
 
 # Create instance of Flask app
 app = Flask(__name__)
 
-# Setup database
-engine = create_engine("")
+# Read in the CSV files from our database tables
+descriptionFilePath = "insert file path here"
+locationFilePath = "isert file path here"
+
+# Declare dictionaries to store tables
+descriptionData = {}
+locationData = {}
+
+# Load the tables into the dictionaries
+with open(descriptionFilePath) as descCSV:
+    csvReader = csv.DictReader(open(descCSV))
+    for csvRow in csvReader:
+
+with open(locationFilePath) as locationCSV:
+    csvReader = csv.DictReader(open(locationCSV))  
+    for csvRow in csvReader:
+              
+# Create a complete data list that contains the two dictionaries
+data = [descriptionData, locationData]
+
 # Create Routes
 @app.route("/")
 def index():
@@ -23,5 +38,6 @@ def interactiveMap():
 @app.route("/top_ten_bars")
 def apiPage():
 
-#@app.route("/dataset")
-#def rawData():
+# Contains the JSON data of our database
+@app.route("/dataset")
+def rawData():

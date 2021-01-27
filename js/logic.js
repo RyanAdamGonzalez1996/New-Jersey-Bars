@@ -82,13 +82,6 @@ function createMarkers(response) {
     createMap(L.layergroup(barSubThree), L.layergroup(barThreeFour), L.layergroup(barAboveFour));
 
 }
-// Create a createLegend Function: Maybe, only if doing pics for each marker
-    
-    // Create a Legend
-
-    // Append a div element to the HTML to add the Legend
-
-    // Add the Legend to the map
 
 // Read in JSON and and pass parameters to the createMarker Function
 // JSON is read from a view from the flask application querying the database that is returned as a JSON
