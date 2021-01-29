@@ -1,20 +1,8 @@
 "bar_description"
 -
-bar_id serial PK FK - bar_location.bar_id
+bar_id serial PK
 bar_name varchar
 bar_type varchar
-website varchar
-hours_of_operation varchar
-phone_number int
 avg_price varchar
 ratings decimal
-
-"bar_location"
--
-bar_id int FK
-coordinates varchar
-county varchar
-street_address varchar
-town varchar
-state varchar
-zipcode varchar
+address varchar
