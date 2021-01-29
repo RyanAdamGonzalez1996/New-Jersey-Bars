@@ -5,6 +5,9 @@
   - Raul Acosta
   - Ryan Gonzalez
   
+# Presentation
+https://docs.google.com/presentation/d/1-f86qN85c_3apV2jniODS03RKxa45QwZiKuTr-gF0Pg/edit?usp=sharing
+
 # Proposal
 The main purpose of our project will be to create a refined version of Google Maps that specifically deals with bars, so that the user can find a new bar to try in New Jersey . The application will provide necessary data for each bar and allow the user to set parameters to help them find a bar to their liking.
 
@@ -35,19 +38,8 @@ TripAdvisor - https://www.tripadvisor.com/
   - bar_id PK serial
   - bar_name varchar
   - bar_type varchar
-  - website varchar
-  - hours_of_operation varchar
-  - phone_number int
   - avg_price varchar
   - ratings decimal
-  
-### bar_locations
-  - bar_id FK int
-  - coordinates varchar
-  - county varchar
-  - street_address varchar
-  - town varchar
-  - state varchar
-  - zipcode varchar
+  - address varchar
   
 # How to run Code
