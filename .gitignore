@@ -8,6 +8,11 @@ config.py
 # C extensions
 *.so
 
+# Ignore config.py
+config.py
+
+## TEST IGNORe
+
 # Distribution / packaging
 .Python
 build/

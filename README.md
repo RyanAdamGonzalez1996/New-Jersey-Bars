@@ -1,5 +1,3 @@
-# New-Jersey-Bars
-=======
 # Group 5 - New-Jersey-Bars
 
 # Group Members
