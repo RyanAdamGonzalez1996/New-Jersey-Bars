@@ -20,6 +20,35 @@ https://docs.google.com/document/d/1UNK2ufW1AakQiwY8aykwzWT2JAURC6hCCWcsJ0p18hY/
 TripAdvisor - https://www.tripadvisor.com/
 
 # Repository Contents
+## css (folder)
+
+## csv (folder)
+
+## Extract (folder)
+
+## Images (folder)
+
+## js (folder)
+
+## json (folder)
+
+## Resources (Folder)
+
+## app.py
+
+## convert_to_JSON.py
+
+## about.html
+
+## index.html
+
+## map.html
+
+## top_ten_bars
+
+## requirements.txt
+
+## ReadMe
 
 # Assignment Details
   - Create an interactive site that displays information about all of the bars in New Jersey. The application will show the best bars in New Jersey. While also, allowing the user to user an interactive map that has all of the bar locations indicated by a marker, and by clicking that marker, information for that bar is shown in a tooltip. The map will also allow the user to filter by ratings to find the best bars around them. 
@@ -46,3 +75,13 @@ TripAdvisor - https://www.tripadvisor.com/
   - address varchar
   
 # How to run Code
+Two Options:
+## Option 1
+  - Clone the repository to a local folder
+  - Run the index.html in a live server
+    - Either a python http server
+    - Or live server extension on Visual Studio Code
+## Option 2
+  - Click the link for GitHub Pages
+  - https://deliahellander.github.io/New-Jersey-Bars/
+  - Enjoy
