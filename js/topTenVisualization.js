@@ -16,7 +16,7 @@ var plotWidth = svgWidth - margin.left - margin.right;
 var plotHeight = svgHeight - margin.top - margin.bottom;
 
 // Create SVG Wrapper
-var svg = d3.select(".top_ten_bars")
+var svg = d3.select("#top_ten_bars")
     .append("svg")
     .attr("width", svgWidth)
     .attr("height", svgHeight);
@@ -26,16 +26,24 @@ var chartGroup = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.right})`);
 
 // CSV file path (bar_descriptions)
-var filePath = "atlantic_city_data.csv"
+var filePath = "../csv/Alantic_City_data.csv";
 
 // Read in CSV data
-d3.csv("atlantic_city_data.csv").then(function(data) {
+d3.csv(filePath).then(function(data) {
 
-    console.log(data);
+    // Declare a rating array to push ratings to
+    var rating = [];
+    var name = [];
     // Declare the Data as numerals
     data.forEach(function(dataset) {
-        dataset.rating_list = +dataset.rating_list
+        dataset.rating_list = +dataset.rating_list;
+        rating.push(dataset.rating_list);
     });
+
+    // Sort array in descending order
+    rating.sort(function(a, b){return b-a});
+    // Only keep the top ten ratings
+    rating.splice(0,20);
 
     // Set Variables for the bars
     var barSpacing = 10;
@@ -44,12 +52,12 @@ d3.csv("atlantic_city_data.csv").then(function(data) {
 
     // Create Scale for X Coordinates
     var xScale = d3.scaleLinear()
-        .domain([d3.min(data, d => d.length), d3.max(data, d => d.length)])
+        .domain([0, 10])
         .range([0, plotWidth]);
 
     // Create Scale for Y Coordinates
     var yScale = d3.scaleLinear()
-        .domain([d3.min(data, d => d.rating_list), d3.max(data, d => d.rating_list)])
+        .domain([0, 5])
         .range([plotHeight, 0]);
 
     // Create Axis Functions
@@ -65,22 +73,24 @@ d3.csv("atlantic_city_data.csv").then(function(data) {
         .call(yAxis);
 
     // Draw the bars on the plot
-    var barGroup = chartGroup.selectAll("bar")
-        .data(data)
+    var barGroup = chartGroup.selectAll("rect")
+        .data(rating)
         .enter()
-        .append("bar")
-        .attr("class", "barLocation")
-        .attr("x", d => xScale(d.length))
-        .attr("y", d => yScale(d.rating_list))
-        .attr("width", )
-        .attr("height", d => d.rating_list * barScale)
+        .append("rect")
+        .attr("class", "bar")
+        .attr("x", function(data, index){
+            return index * 80 + 65;
+        })
+        .attr("y", d => yScale(d))
+        .attr("width", 40)
+        .attr("height", d => plotHeight - yScale(d))
         .attr("opacity", 0.75);
 
     // Initialize tooltip
     var toolTip = d3.tip()
     .attr("class", "d3-tip")
     .html(function(d) {
-        return (``)
+        return (d);
     })
 
     // Create the tooltip in chartGroup
