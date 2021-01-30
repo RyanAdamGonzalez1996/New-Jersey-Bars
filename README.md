@@ -4,7 +4,10 @@
   - Delia Hellander
   - Raul Acosta
   - Ryan Gonzalez
-  
+
+# GitHub Pages
+https://deliahellander.github.io/New-Jersey-Bars/
+
 # Presentation
 https://docs.google.com/presentation/d/1-f86qN85c_3apV2jniODS03RKxa45QwZiKuTr-gF0Pg/edit?usp=sharing
 
