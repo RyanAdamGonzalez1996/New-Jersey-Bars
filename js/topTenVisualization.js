@@ -16,7 +16,7 @@ var plotWidth = svgWidth - margin.left - margin.right;
 var plotHeight = svgHeight - margin.top - margin.bottom;
 
 // Create SVG Wrapper
-var svg = d3.select("#top_ten_bars")
+var svg = d3.select(".top_ten_bars")
     .append("svg")
     .attr("width", svgWidth)
     .attr("height", svgHeight);
@@ -26,13 +26,14 @@ var chartGroup = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.right})`);
 
 // CSV file path (bar_descriptions)
-var filePath = "/csv/atlantic_city_data.csv"
+var filePath = "atlantic_city_data.csv"
 
 // Read in CSV data
-d3.csv(filePath).then(function(data) {
+d3.csv("atlantic_city_data.csv").then(function(data) {
 
+    console.log(data);
     // Declare the Data as numerals
-    data.forEach(function(dataset){
+    data.forEach(function(dataset) {
         dataset.rating_list = +dataset.rating_list
     });
 

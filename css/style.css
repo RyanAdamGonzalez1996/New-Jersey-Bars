@@ -47,3 +47,9 @@ html {
     clear: both;
     display: table;
 }
+
+#map,
+body,
+html {
+  height: 100%;
+}

@@ -1,25 +1,19 @@
 import csv, json
-
+import pandas as pd
 # Read in the CSV files from our database tables
-atlanticFilePath = "csv/atlantic_city_data.csv"
+atlanticFilePath = "csv/Alantic_City_data.csv"
 
 
 # Declare dictionaries to store tables
 atlanticData = {}
 
 
-# Load the tables into the dictionaries
-with open(atlanticFilePath) as descCSV:
-    csvReader = csv.DictReader(descCSV)
-    for csvRow in csvReader:
-        isbn = csvRow["restaurant_name"]
-        atlanticData[isbn] = csvRow
-
-              
-# Create a complete data list that contains the two dictionaries
-data = {"feature" : atlanticData}
-
-with open("json/atlantic_city.json", "w") as jsonFile:
-    jsonFile.write(json.dumps(data))
     
-print(atlanticData)
+from csv import DictReader
+fieldnames = ("restaurant_name","bar_type","price_level","rating_list","address_list")
+
+with open(atlanticFilePath, 'r') as fd:
+  data = list(DictReader(fd, fieldnames))
+
+with open("json/atlantic_city.json", 'w') as fd:
+  json.dump(data, fd)
