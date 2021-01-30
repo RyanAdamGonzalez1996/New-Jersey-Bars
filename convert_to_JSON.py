@@ -8,15 +8,16 @@ newBrunswick = "csv/New_Brunswick_data.csv"
 princeton = "csv/Princeton_data.csv"
 somerville = "csv/Somerville_data.csv"
 trenton = "csv/Trenton_data.csv"
+allCity = "csv/allCity_Geocode.csv"
 
-files = [atlanticCity, flemington, morristown, newBrunswick, princeton, somerville,trenton]
-data = []
+# All City
+data2 = []
 
 from csv import DictReader
-fieldnames = ("restaurant_name","bar_type","price_level","rating_list","address_list")
-for file in files:
-    with open(file, 'r') as fd:
-        data.append(list(DictReader(fd, fieldnames)))
+fieldnames2 = ("restaurant_name","bar_type","price_level","rating_list","address_list","Latitude","Longitude")
+with open(allCity, 'r') as fd:
+  data2.append(list(DictReader(fd, fieldnames2)))
 
-with open("json/atlantic_city.json", 'w') as fd:
-  json.dump(data, fd)
+with open("json/allCity.json", 'w') as fd:
+  json.dump(data2, fd)
+

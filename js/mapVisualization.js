@@ -49,40 +49,35 @@ function createMap(barSubThree, barThreeFour, barAboveFour){
 function createMarkers(response) {
   // Pull the Bars from JSON
   var bars = response;
-  console.log(bars);
-  console.log(bars.length);
   var barSubThree = [];
   var barThreeFour = [];
   var barAboveFour = [];
-  //var geocoder = new google.maps.Geocoder();
-
+  
+  console.log(bars.restaurant_name);
   // Loop Through the bars array
-  for (var index = 0; index < bars.length; index++) {
+  for (var index = 1; index < bars.length; index++) {
     var bar = bars[index];
+    var latitude = bar.Latitude;
+    var longitude = bar.Longitude;
+    bar.rating_list = +bar.rating_list;
     console.log(bar);
+    // Numerize the rating
     
-    //geocoder.geocode( {"address": bars.address_list}, function(results, status) {
-      //if (status == google.maps.GeocoderStatus.OK) {
-       // var latitude = results[0].geometry.location.lat();
-       // var longitude = results[0].geometry.location.lng();
-      // For each bar, create a marker and bind a popup with the bar description
-      //var barMarker = L.marker([])
-      //.bindPopup("<h3>" + bar.restaurant_name + "<h3><h3>Type: " + bar.bar_type + 
-      //"<h3><h3>Address: " + bar.address_list + "<h3><h3>Average Price: " + bar.price_level + 
-      //"<h3><h3>Ratings: " + bar.rating_list + "</h3>");
+    //For each bar, create a marker and bind a popup with the bar description
+    var barMarker = L.marker([latitude, longitude])
+      .bindPopup("<h3>" + bar.restaurant_name + "<h3><h3>Type: " + bar.bar_type + 
+      "<h3><h3>Address: " + bar.address_list + "<h3><h3>Average Price: " + bar.price_level + 
+      "<h3><h3>Ratings: " + bar.rating_list + "</h3>");
 
-      // Add the marker to the barMarker array corresponding to the rating interval
-      //if (bar.ratings < 3){
-      //    barSubThree.push(barMarker);
-      //}else if (bar.rating_list >= 3  && bar.rating_list <= 4){
-      //    barThreeFour.push(barMarker);
-      //}else {
-      //    barAboveFour.push(barMarker);
-      //}
-      
-    //});
+    //Add the marker to the barMarker array corresponding to the rating interval
+      if (bar.rating_list < 3){
+          barSubThree.push(barMarker);
+      }else if (bar.rating_list >= 3  && bar.rating_list <= 4){
+          barThreeFour.push(barMarker);
+      }else {
+          barAboveFour.push(barMarker);
+      }
   }
-
   // Create a Layer Group made from the barMarker array and pass it to the createMap function
   createMap(L.layerGroup(barSubThree), L.layerGroup(barThreeFour), L.layerGroup(barAboveFour));
 
@@ -90,5 +85,5 @@ function createMarkers(response) {
 
 // Read in JSON and and pass parameters to the createMarker Function
 // JSON is read from a view from the flask application querying the database that is returned as a JSON
-filePath = "/../json/bars.json";
+filePath = "/../json/allCity.json";
 d3.json(filePath, createMarkers);
