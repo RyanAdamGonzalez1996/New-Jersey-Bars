@@ -1,0 +1,8 @@
+"bar_description"
+-
+bar_id serial PK
+restaurant_name varchar
+bar_type varchar
+price_name varchar
+rating decimal
+address_list varchar
