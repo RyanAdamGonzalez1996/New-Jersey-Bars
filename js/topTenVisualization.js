@@ -12,11 +12,11 @@ var margin = {
 };
 
 // Plot Dimensions
-var plotWidth =     svgWidth - margin.left - margin.right;
+var plotWidth = svgWidth - margin.left - margin.right;
 var plotHeight = svgHeight - margin.top - margin.bottom;
 
 // Create SVG Wrapper
-var svg = d3.select("#top=ten-bars")
+var svg = d3.select("#top_ten_bars")
     .append("svg")
     .attr("width", svgWidth)
     .attr("height", svgHeight);
@@ -26,10 +26,10 @@ var chartGroup = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.right})`);
 
 // CSV file path (bar_descriptions)
-var filePath = "/../csv/atlantic_city_data.csv";
+var filePath = "/csv/atlantic_city_data.csv"
 
 // Read in CSV data
-d3.csv(filePath).then(function(data){
+d3.csv(filePath).then(function(data) {
 
     // Declare the Data as numerals
     data.forEach(function(dataset){

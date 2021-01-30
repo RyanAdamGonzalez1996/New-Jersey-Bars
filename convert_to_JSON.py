@@ -17,9 +17,9 @@ with open(atlanticFilePath) as descCSV:
 
               
 # Create a complete data list that contains the two dictionaries
-
+data = {"feature" : atlanticData}
 
 with open("json/atlantic_city.json", "w") as jsonFile:
-    jsonFile.write(json.dumps(atlanticData))
+    jsonFile.write(json.dumps(data))
     
 print(atlanticData)
