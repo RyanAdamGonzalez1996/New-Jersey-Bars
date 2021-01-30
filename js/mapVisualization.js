@@ -47,23 +47,13 @@ function createMap(barSubThree, barThreeFour, barAboveFour){
 }
 // Create a createMarkers Function
 function createMarkers(response) {
-
-  // Pull the Bars from the JSON
-  // awaiting dataset
+  // Pull the Bars from JSON
   var bars = response;
   console.log(bars);
-
   console.log(bars.length);
-  //var count = Object.keys(bars.properties).length;
-  //console.log(count);
-  // Initalize an array to hold each layer (barMarker)
-  // Might be able to do only one layer for the time being, if so at least get the rating
-  // an array for each Rating interval
   var barSubThree = [];
   var barThreeFour = [];
   var barAboveFour = [];
-
-  // Geocode
   //var geocoder = new google.maps.Geocoder();
 
   // Loop Through the bars array
@@ -100,5 +90,5 @@ function createMarkers(response) {
 
 // Read in JSON and and pass parameters to the createMarker Function
 // JSON is read from a view from the flask application querying the database that is returned as a JSON
-filePath = "/../json/atlantic_city.json";
+filePath = "/../json/bars.json";
 d3.json(filePath, createMarkers);
