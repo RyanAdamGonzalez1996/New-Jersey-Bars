@@ -12,7 +12,7 @@ var margin = {
 };
 
 // Plot Dimensions
-var plotWidth = svgWidth - margin.left - margin.right;
+var plotWidth =     svgWidth - margin.left - margin.right;
 var plotHeight = svgHeight - margin.top - margin.bottom;
 
 // Create SVG Wrapper
@@ -26,24 +26,29 @@ var chartGroup = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.right})`);
 
 // CSV file path (bar_descriptions)
-var filePath = "/../csv/bar_description.csv";
+var filePath = "/../csv/atlantic_city_data.csv";
 
 // Read in CSV data
 d3.csv(filePath).then(function(data){
 
     // Declare the Data as numerals
     data.forEach(function(dataset){
-        dataset. = +dataset.
+        dataset.rating_list = +dataset.rating_list
     });
+
+    // Set Variables for the bars
+    var barSpacing = 10;
+    var barScale = 10;
+    var barWidth = (plotWidth - (barSpacing * (data.length - 1))) / data.length;
 
     // Create Scale for X Coordinates
     var xScale = d3.scaleLinear()
-        .domain([d3.min(data, d => d.), d3.max(data, d => d.)])
+        .domain([d3.min(data, d => d.length), d3.max(data, d => d.length)])
         .range([0, plotWidth]);
 
     // Create Scale for Y Coordinates
     var yScale = d3.scaleLinear()
-        .domain([d3.min(data, d => d.), d3.max(data, d => d.)])
+        .domain([d3.min(data, d => d.rating_list), d3.max(data, d => d.rating_list)])
         .range([plotHeight, 0]);
 
     // Create Axis Functions
@@ -64,10 +69,10 @@ d3.csv(filePath).then(function(data){
         .enter()
         .append("bar")
         .attr("class", "barLocation")
-        .attr("x", d => xScale(d.))
-        .attr("y", d => yScale(d.))
+        .attr("x", d => xScale(d.length))
+        .attr("y", d => yScale(d.rating_list))
         .attr("width", )
-        .attr("height", function(d) { return height - yScale(d.); })
+        .attr("height", d => d.rating_list * barScale)
         .attr("opacity", 0.75);
 
     // Initialize tooltip

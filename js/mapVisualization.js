@@ -86,5 +86,3 @@ function createMarkers(response) {
 // Read in JSON and and pass parameters to the createMarker Function
 // JSON is read from a view from the flask application querying the database that is returned as a JSON
 d3.json("", createMarkers);
-
-// Add the Legend to the Map: Maybe
