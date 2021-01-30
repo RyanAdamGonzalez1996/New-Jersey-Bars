@@ -62,3 +62,17 @@ html {
     clear: both;
     display: table;
 }
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.bar {
+fill: blue;
+}
+
+.bar:hover {
+fill: red;
+}
