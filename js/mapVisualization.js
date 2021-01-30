@@ -66,19 +66,19 @@ function createMarkers(response) {
        // var latitude = results[0].geometry.location.lat();
        // var longitude = results[0].geometry.location.lng();
       // For each bar, create a marker and bind a popup with the bar description
-      var barMarker = L.marker([])
-      .bindPopup("<h3>" + bar.restaurant_name + "<h3><h3>Type: " + bar.bar_type + 
-      "<h3><h3>Address: " + bar.address_list + "<h3><h3>Average Price: " + bar.price_level + 
-      "<h3><h3>Ratings: " + bar.rating_list + "</h3>");
+      //var barMarker = L.marker([])
+      //.bindPopup("<h3>" + bar.restaurant_name + "<h3><h3>Type: " + bar.bar_type + 
+      //"<h3><h3>Address: " + bar.address_list + "<h3><h3>Average Price: " + bar.price_level + 
+      //"<h3><h3>Ratings: " + bar.rating_list + "</h3>");
 
       // Add the marker to the barMarker array corresponding to the rating interval
-      if (bar.ratings < 3){
-          barSubThree.push(barMarker);
-      }else if (bar.rating_list >= 3  && bar.rating_list <= 4){
-          barThreeFour.push(barMarker);
-      }else {
-          barAboveFour.push(barMarker);
-      }
+      //if (bar.ratings < 3){
+      //    barSubThree.push(barMarker);
+      //}else if (bar.rating_list >= 3  && bar.rating_list <= 4){
+      //    barThreeFour.push(barMarker);
+      //}else {
+      //    barAboveFour.push(barMarker);
+      //}
       
     //});
   }
