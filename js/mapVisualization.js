@@ -64,19 +64,19 @@ function createMarkers(response) {
   var barAboveFour = [];
 
   // Geocode
-  var geocoder = new google.maps.Geocoder();
+  //var geocoder = new google.maps.Geocoder();
 
   // Loop Through the bars array
   for (var index = 0; index < bars.length; index++) {
     var bar = bars[index];
     console.log(bar);
     
-    geocoder.geocode( {"address": bars.address_list}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        var latitude = results[0].geometry.location.lat();
-        var longitude = results[0].geometry.location.lng();
+    //geocoder.geocode( {"address": bars.address_list}, function(results, status) {
+      //if (status == google.maps.GeocoderStatus.OK) {
+       // var latitude = results[0].geometry.location.lat();
+       // var longitude = results[0].geometry.location.lng();
       // For each bar, create a marker and bind a popup with the bar description
-      var barMarker = L.marker([longitude, latitude])
+      var barMarker = L.marker([])
       .bindPopup("<h3>" + bar.restaurant_name + "<h3><h3>Type: " + bar.bar_type + 
       "<h3><h3>Address: " + bar.address_list + "<h3><h3>Average Price: " + bar.price_level + 
       "<h3><h3>Ratings: " + bar.rating_list + "</h3>");
@@ -89,8 +89,8 @@ function createMarkers(response) {
       }else {
           barAboveFour.push(barMarker);
       }
-      }
-    });
+      
+    //});
   }
 
   // Create a Layer Group made from the barMarker array and pass it to the createMap function
