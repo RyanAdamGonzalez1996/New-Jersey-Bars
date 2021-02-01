@@ -8,40 +8,24 @@ import json, csv
 # Create instance of Flask app
 app = Flask(__name__)
 
-# Read in the CSV files from our database tables
-descriptionFilePath = "/../csv/mini_oprah"
-locationFilePath = "/../csv/new_york_times"
-
-# Declare dictionaries to store tables
-descriptionData = {}
-locationData = {}
-
-# Load the tables into the dictionaries
-with open(descriptionFilePath) as descCSV:
-    csvReader = csv.DictReader(open(descCSV))
-    for csvRow in csvReader:
-        isbn = csvRow["isbn"]
-        descriptionData[isbn] = csvRow
-
-with open(locationFilePath) as locationCSV:
-    csvReader = csv.DictReader(open(locationCSV))  
-    for csvRow in csvReader:
-        isbn = csvRow["isbn"]
-        locationData[isbn] = csvRow
-              
-# Create a complete data list that contains the two dictionaries
-data = [descriptionData, locationData]
+jsonDict = {}
 
 # Create Routes
 @app.route("/")
-def index():
+def init():
+    # Create a connection to posgresql database
+    conn = psycopg2.connect("dbname= Project2_Group5 user=Group5 password=group5!")
 
-@app.route("/map")
-def interactiveMap():
+    cursor = conn.cursor()
 
-@app.route("/top_ten_bars")
-def apiPage():
+    cursor.execute("SELECT * FROM bar_description")
 
-# Contains the JSON data of our database
-@app.route("/dataset")
-def rawData():
+    results = cursor.fetchall()
+    
+    jsonDict =
+    conn.close()
+
+    return jsonDict
+
+if __name__ == "__main__":
+    app.run(debug=True)
