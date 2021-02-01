@@ -86,12 +86,15 @@ TripAdvisor - https://www.tripadvisor.com/
   - Can also be seen on our presentation slide: https://docs.google.com/presentation/d/1-f86qN85c_3apV2jniODS03RKxa45QwZiKuTr-gF0Pg/edit?usp=sharing
 
 ## Map Visualization 
+![Map Visualization](https://github.com/deliahellander/New-Jersey-Bars/blob/main/Images/mapFinal_Markers.PNG?raw=true)
 (images/mapFinalMarkers.png)
 
 ## Map Visualization ToolTip
+![Map Visualization ToolTip](https://github.com/deliahellander/New-Jersey-Bars/blob/main/Images/mapFinal_toolTip.PNG?raw=true)
 (images/mapFinal_toolTip.png)
 
 ## Top Ten Chart
+![Top Ten Chart](https://github.com/deliahellander/New-Jersey-Bars/blob/main/Images/Chart.PNG?raw=true)
 (images/Chart.png)
 
 # Database
