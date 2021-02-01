@@ -117,7 +117,9 @@ Two Options:
 ## Option 2
   - Click the link for GitHub Pages
   - https://deliahellander.github.io/New-Jersey-Bars/
-  - Enjoy
+  - The visualizations will not load due to reasons explained below
+    - Our database will not let us import the geocode CSV as the geocode, that added the coordinates, seems to be making this hard.
+    - Also, currently unaware of how to make the server live when using github pages. We are currently looking into why, but hopefully we will resolve this soon.
   
 # Issues we Encountered
 ## Data Scraping taking much longer than anticipated
