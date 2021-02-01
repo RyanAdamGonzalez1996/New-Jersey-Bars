@@ -142,6 +142,7 @@ Two Options:
     - I can only get it working with our "Alantic_City_data.csv" file
       - It appears that the geocode messed up the format of our CSV and we are unable to get this resolved.
       - I did get the flask app working with the data we have to prove the concept, but unable to go further.
+      - I don't want to mess the entire code to get this working, as we do not have the time to rectify any additional issues we may cause.
     
 ## Live updates on new Bars
   - Not necessary, but will be much appreciated to have our site do a check with TripAdvisor to make sure the ratings are up-to-date and if there are any new bars
