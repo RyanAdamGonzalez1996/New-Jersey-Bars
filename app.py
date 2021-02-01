@@ -2,6 +2,7 @@
 from flask import Flask, render_template, jsonify, redirect
 import numpy as np
 import datetime as dt
+import psycopg2
 
 import json, csv
 
@@ -22,7 +23,7 @@ def init():
 
     results = cursor.fetchall()
     
-    jsonDict =
+    jsonDict = results
     conn.close()
 
     return jsonDict
