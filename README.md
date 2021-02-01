@@ -136,6 +136,12 @@ Two Options:
     - Will have to revamp our database once more due to the usage of GeoCodio
   - We did not have time to really understand how to use our Flask Application to return a JSON object to our site
     - Currently, unsure of the exact way of performing this action, will have to do further research
+  
+  - Another Issue Arose - Not able to use the full allCity_Geocode.csv
+    - Whenever we attempt to import this csv into our database it gives us a formatting issue
+    - I can only get it working with our "Alantic_City_data.csv" file
+      - It appears that the geocode messed up the format of our CSV and we are unable to get this resolved.
+      - I did get the flask app working with the data we have to prove the concept, but unable to go further.
     
 ## Live updates on new Bars
   - Not necessary, but will be much appreciated to have our site do a check with TripAdvisor to make sure the ratings are up-to-date and if there are any new bars
